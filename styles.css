@@ -22,7 +22,7 @@ body {
 }
 
 header div {
-    max-width: 20vw;
+    display: inline;
 }
 div.logo img{
     width: 120px;
