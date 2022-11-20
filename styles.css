@@ -20,12 +20,17 @@ body {
     background-repeat: no-repeat;
     position: relative;
 }
-header div{
-   max-width: 20vw;
+
+header div {
+    max-width: 20vw;
 }
+div.logo img{
+    width: 120px;
+    height: auto;
+}
+
 .logo {
     position: absolute;
-    width: 100%;
     top: 36px;
     left: 74px;
 }
@@ -39,6 +44,7 @@ header div{
 .left-part {
     width: 55%;
     padding-left: 5rem;
+    padding-right: 4rem;
     display: flex;
     /* align-items: center; */
     justify-content: center;
@@ -87,55 +93,104 @@ header div{
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.1rem;
 }
-.left-part form button{
+
+.left-part form button {
     cursor: pointer;
-	position: absolute;
-	right: 0;
-	border: none;
-	outline: none;
-	color: white;
-	width: 70px;
-	height: 100%;
-	border-radius: 50px;
-	background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
-	box-shadow: 0px 0px 18px 1px #f4aaab82;
-	transition: .3s ease box-shadow;
-}
-.left-part form button:hover{
-    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsla(0, 52%, 80%, 0.781));
-	box-shadow: 0px 0px 13px 2px #f4aaabbf;
-}
-.left-part form input::placeholder{
-    color: hsl(0, 36%, 70%);
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 1.1rem;
-	opacity: .8;
-}
-.left-part form .error-icon{
-    display: inline-block;
-	position: absolute;
-	right: 85px;
-	top: 24%;
-	display: none;
-}
-.left-part form .error-msg{
     position: absolute;
-	left: 30px;
-	top: 67px;
-	font-size: 16px;
+    right: 0;
+    border: none;
+    outline: none;
+    color: white;
+    width: 70px;
+    height: 100%;
+    border-radius: 50px;
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    box-shadow: 0px 0px 18px 1px #f4aaab82;
+    transition: .3s ease box-shadow;
+}
+
+.left-part form button:hover {
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsla(0, 52%, 80%, 0.781));
+    box-shadow: 0px 6px 14px 2px #f4aaabbf;
+}
+
+.left-part form input::placeholder {
+    color: hsl(0, 36%, 70%);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1rem;
+    opacity: .8;
+}
+
+.left-part form .error-icon {
+    display: inline-block;
+    position: absolute;
+    right: 85px;
+    top: 24%;
+    display: none;
+}
+
+.left-part form .error-msg {
+    position: absolute;
+    left: 30px;
+    top: 67px;
+    font-size: 16px;
     color: var(--soft-red);
-	display: none;
+    display: none;
 }
 
 .left-part form.error .error-icon,
 .left-part form.error .error-msg {
-	display: block;
+    display: block;
 }
+
 .left-part form.error input {
-	border: 2px solid var(--soft-red);
+    border: 2px solid var(--soft-red);
 }
+
 .right-part {
     background-image: url(./images/hero-desktop.jpg);
     background-repeat: no-repeat;
     width: 45%;
+}
+
+@media only screen and (max-width:425px) {
+    .container {
+        padding-top: 100px;
+        min-height: 100vh;
+        width: 100%;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+    .logo{
+        top: 27px;
+        left: 30px;
+        max-width: 70%;
+    }
+    .left-part {
+        width: 100%;
+        padding: 50px 30px 0 30px;
+    }
+
+    .main-heading {
+        font-size: 32px;
+        line-height: 35px;
+        text-align: center;
+        font-weight: 600;
+    }
+    .description{
+        text-align: center;
+        font-size: 14px;
+    }
+    .error-msg{
+        font-size: 12px;
+    }
+
+    .right-part {
+        width: 100%;
+        height: 300px;
+        background-image: url(./images/hero-mobile.jpg);
+        background-size: cover;
+    }
 }
